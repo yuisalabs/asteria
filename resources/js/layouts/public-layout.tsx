@@ -6,8 +6,7 @@ import { Button, buttonVariants } from '@/components/ui/button';
 import { Menu, MenuItem, MenuPopup, MenuSeparator, MenuTrigger } from '@/components/ui/menu';
 import { getInitials } from '@/utils/initials';
 import { Link, usePage } from '@inertiajs/react';
-import { 
-    LucideBookOpen,
+import {
     LucideHome,
     LucideLayoutDashboard, 
     LucideLogIn,
@@ -100,19 +99,6 @@ export default function PublicLayout({
                                 <LucideHome className="size-4" />
                                 {t('navigation.home')}
                             </Link>
-                            <a
-                                href="https://selia.earth/docs/introduction"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={closeMobileMenu}
-                                className={cn(
-                                    buttonVariants({ variant: 'plain', size: 'sm' }),
-                                    'justify-start w-full'
-                                )}
-                            >
-                                <LucideBookOpen className="size-4" />
-                                Selia UI Documentation
-                            </a>
                         </div>
                     </nav>
 
@@ -218,16 +204,6 @@ export default function PublicLayout({
                                 >
                                     {t('navigation.home')}
                                 </Link>
-                                <a
-                                    href="https://selia.earth/docs/introduction"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={cn(
-                                        buttonVariants({ variant: 'plain', size: 'sm' })
-                                    )}
-                                >
-                                    Selia UI Documentation
-                                </a>
                             </div>
                         </div>
 
