@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Workspace\WorkspaceController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -20,9 +21,11 @@ Route::group([
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
 ], function () {
 
-    Route::get('/', function () {
-        return Inertia::render('home/HomePage');
-    })->name('welcome');
+    Route::get('/', fn () => Inertia::render('home/HomePage'))->name('welcome');
+
+    Route::middleware(['auth', 'role:Workspace Admin, Workspace Member'])->group(function () {
+        Route::get('/workspace', [WorkspaceController::class, 'index'])->name('workspace.index');
+    });
 
     Route::middleware(['auth', 'role:Super Admin,Admin'])->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

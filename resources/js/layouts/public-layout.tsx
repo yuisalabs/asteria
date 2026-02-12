@@ -7,6 +7,7 @@ import { Menu, MenuItem, MenuPopup, MenuSeparator, MenuTrigger } from '@/compone
 import { getInitials } from '@/utils/initials';
 import { Link, usePage } from '@inertiajs/react';
 import {
+    LucideBriefcase,
     LucideHome,
     LucideLayoutDashboard, 
     LucideLogIn,
@@ -223,6 +224,20 @@ export default function PublicLayout({
                                         }
                                     />
                                     <MenuPopup>
+                                        <MenuItem render={
+                                            <Button
+                                                nativeButton={false}
+                                                variant="plain"
+                                                render={
+                                                    <Link
+                                                        className='justify-start w-full'
+                                                        href={route('workspace.index')}
+                                                    />
+                                                }>
+                                                <LucideBriefcase />
+                                                {t('navigation.workspace')}
+                                            </Button>
+                                        }/>
                                         <MenuItem render={
                                             <Button
                                                 nativeButton={false}

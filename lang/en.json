@@ -84,6 +84,7 @@
         "unique": "This value is already taken"
     },
     "navigation": {
+        "workspace": "Workspace",
         "dashboard": "Dashboard",
         "users": "Users",
         "roles": "Roles",

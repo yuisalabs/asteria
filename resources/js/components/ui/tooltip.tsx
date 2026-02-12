@@ -9,6 +9,15 @@ export function Tooltip({
   return <BaseTooltip.Root data-slot="tooltip" {...props} />;
 }
 
+export function TooltipProvider({
+  delay = 400,
+  ...props
+}: React.ComponentProps<typeof BaseTooltip.Provider> & {
+  delay?: number;
+}) {
+  return <BaseTooltip.Provider delay={delay} {...props} />;
+}
+
 export function TooltipTrigger({
   ...props
 }: React.ComponentProps<typeof BaseTooltip.Trigger>) {

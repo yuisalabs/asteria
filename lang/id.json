@@ -84,6 +84,7 @@
         "unique": "Nilai ini sudah digunakan"
     },
     "navigation": {
+        "workspace": "Ruang Kerja",
         "dashboard": "Dasbor",
         "users": "Pengguna",
         "roles": "Peran",

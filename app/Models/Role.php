@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Role extends Model
 {
+    use HasUuids;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -105,6 +108,10 @@ class Role extends Model
 
             if (is_int($permission) || is_numeric($permission)) {
                 return (int) $permission;
+            }
+
+            if (is_string($permission) && \Illuminate\Support\Str::isUuid($permission)) {
+                return $permission;
             }
 
             return Permission::where('name', $permission)->firstOrFail()->id;
